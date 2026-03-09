@@ -99,3 +99,24 @@ footer { background: #000; color: white; text-align: center; padding: 15px; font
         font-size: 30px;
     }
 }
+.map-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #4285F4; /* Google Blue color */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+}
+
+.map-btn:hover {
+    background-color: #3367D6;
+    color: white;
+}
+
+.map-btn i {
+    margin-right: 5px;
+}
