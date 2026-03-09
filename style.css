@@ -1,0 +1,101 @@
+:root {
+    --bg-color: #f4f4f4;
+    --text-color: #333;
+    --header-bg: #222;
+    --accent-color: #f1c40f;
+    --card-bg: #fff;
+}
+
+.dark-theme {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --header-bg: #000;
+    --card-bg: #1e1e1e;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+body { background: var(--bg-color); color: var(--text-color); transition: 0.3s; }
+
+header {
+    background: var(--header-bg); color: white;
+    padding: 1rem; position: sticky; top: 0; z-index: 1000;
+    display: flex; justify-content: space-between; align-items: center;
+}
+
+.logo-area h1 { font-size: 1.2rem; color: var(--accent-color); }
+.logo-area p { font-size: 0.8rem; opacity: 0.8; }
+
+nav { display: flex; align-items: center; gap: 15px; }
+.theme-btn, .menu-dots { cursor: pointer; font-size: 1.2rem; color: var(--accent-color); }
+
+#nav-links {
+    position: absolute; top: 100%; right: 10px; background: var(--header-bg);
+    display: none; flex-direction: column; padding: 10px; border-radius: 5px;
+}
+#nav-links.active { display: flex; }
+#nav-links li { list-style: none; margin: 10px; }
+#nav-links a { color: white; text-decoration: none; font-size: 1rem; }
+
+.section-title { text-align: center; margin: 2rem 0; color: var(--accent-color); }
+
+.services-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 10px;
+}
+.service-card {
+    background: var(--card-bg); padding: 20px; text-align: center; border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.service-card i { font-size: 2rem; color: var(--accent-color); margin-bottom: 10px; }
+
+.gallery-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 10px;
+}
+.gallery-grid img { width: 100%; border-radius: 5px; cursor: pointer; height: 150px; object-fit: cover; }
+
+.contact-section { padding: 20px; background: var(--card-bg); margin: 20px 10px; border-radius: 8px; }
+.info-box { margin-bottom: 15px; }
+
+footer { background: #000; color: white; text-align: center; padding: 15px; font-size: 0.8rem; }
+
+/* Lightbox */
+#lightbox {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9); display: none; justify-content: center; align-items: center; z-index: 2000;
+}
+#lightbox img { max-width: 90%; max-height: 80%; border: 3px solid white; }
+/* WhatsApp Floating Button Styling */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 35px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    color: white;
+}
+
+/* Screen choti ho toh icon thoda upar rahe taki footer se na takraye */
+@media screen and (max-width: 768px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 70px; /* Footer ke upar jagah dene ke liye */
+        font-size: 30px;
+    }
+}
